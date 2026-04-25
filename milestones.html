@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoMT Cybersecurity Framework | Milestones</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const parent = element.parentElement;
+            
+            if (parent.classList.contains('active')) {
+                parent.classList.remove('active');
+            } else {
+                // Close others
+                document.querySelectorAll('.accordion').forEach(acc => acc.classList.remove('active'));
+                parent.classList.add('active');
+            }
+        }
+    </script>
+    <style>
+        .milestone-details {
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            background: rgba(0,0,0,0.2);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .milestone-detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .milestone-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .milestone-value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .marks-value {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="Final Submitted Doc/LOGO.png" alt="MEDGUARD-X" style="height: 70px; vertical-align: middle;" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerText='MEDGUARD-X';"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="domain.html">Domain</a></li>
+                <li><a href="milestones.html" class="active">Milestones</a></li>
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="presentations.html">Presentations</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header-spacer"></div>
+
+    <header class="section" style="background: var(--bg-card); text-align: center; padding: 4rem 0;">
+        <div class="container">
+            <h1>Project <span class="text-gradient">Milestones</span></h1>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem;">Track our progress through key assessments and deliverables for the 2025-2026 academic year.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            
+            <div class="accordion active">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Project Proposal</span>
+                    <span style="color: var(--accent-primary);">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Initial submission detailing the research problem, objectives, methodology, and the 4-component architecture of the IoMT Cybersecurity Framework.</p>
+                    <div class="milestone-details">
+                        <div class="milestone-detail-item">
+                            <span class="milestone-label">Date</span>
+                            <span class="milestone-value">August 2025</span>
+                        </div>
+                        <div class="milestone-detail-item">
+                            <span class="milestone-label">Marks Allocated</span>
+                            <span class="milestone-value marks-value">15%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Progress Presentation - 1</span>
+                    <span style="color: var(--accent-primary);">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Demonstration of the initial prototype setup, including the data ingestion layers, preliminary AI models, and basic SIEM configuration.</p>
+                    <div class="milestone-details">
+                        <div class="milestone-detail-item">
+                            <span class="milestone-label">Date</span>
+                            <span class="milestone-value">November 2025</span>
+                        </div>
+                        <div class="milestone-detail-item">
+                            <span class="milestone-label">Marks Allocated</span>
+                            <span class="milestone-value marks-value">15%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Progress Presentation - 2</span>
+                    <span style="color: var(--accent-primary);">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Showcase of the integrated components: AICE correlation engine working with the Threat Intelligence models, and triggering automated network containment.</p>
+                    <div class="milestone-details">
+                        <div class="milestone-detail-item">
+                            <span class="milestone-label">Date</span>
+                            <span class="milestone-value">February 2026</span>
+                        </div>
+                        <div class="milestone-detail-item">
+                            <span class="milestone-label">Marks Allocated</span>
+                            <span class="milestone-value marks-value">20%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Final Assessment</span>
+                    <span style="color: var(--accent-primary);">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Comprehensive evaluation of the final system including offline capabilities, PHI redaction, device rollback, and the final dissertation document.</p>
+                    <div class="milestone-details">
+                        <div class="milestone-detail-item">
+                            <span class="milestone-label">Date</span>
+                            <span class="milestone-value">May 2026</span>
+                        </div>
+                        <div class="milestone-detail-item">
+                            <span class="milestone-label">Marks Allocated</span>
+                            <span class="milestone-value marks-value">30%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Viva Voce</span>
+                    <span style="color: var(--accent-primary);">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>Final oral defense and demonstration of the complete Real-Time SIEM-Based Cybersecurity Framework to the academic panel.</p>
+                    <div class="milestone-details">
+                        <div class="milestone-detail-item">
+                            <span class="milestone-label">Date</span>
+                            <span class="milestone-value">June 2026</span>
+                        </div>
+                        <div class="milestone-detail-item">
+                            <span class="milestone-label">Marks Allocated</span>
+                            <span class="milestone-value marks-value">20%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h2 class="logo" style="margin-bottom: 1rem;"><img src="Final Submitted Doc/LOGO.png" alt="MEDGUARD-X" style="height: 90px;" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerText='MEDGUARD-X';"></h2>
+            <p>BSc (Hons) in Information Technology Specializing in Cyber Security</p>
+            <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--border-color);">© 2025 Project 25-26J-70. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

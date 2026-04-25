@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoMT Cybersecurity Framework | Domain</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const parent = element.parentElement;
+            
+            if (parent.classList.contains('active')) {
+                parent.classList.remove('active');
+            } else {
+                // Close others
+                document.querySelectorAll('.accordion').forEach(acc => acc.classList.remove('active'));
+                parent.classList.add('active');
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="Final Submitted Doc/LOGO.png" alt="MEDGUARD-X" style="height: 70px; vertical-align: middle;" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerText='MEDGUARD-X';"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="domain.html" class="active">Domain</a></li>
+                <li><a href="milestones.html">Milestones</a></li>
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="presentations.html">Presentations</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header-spacer"></div>
+
+    <!-- Domain Header -->
+    <header class="section" style="background: var(--bg-card); text-align: center; padding: 4rem 0;">
+        <div class="container">
+            <h1>Research <span class="text-gradient">Domain</span></h1>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem;">Explore the foundational research, objectives, and methodologies behind the Real-Time SIEM-Based Cybersecurity Framework for IoMT Environments.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="accordion active">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Literature Survey & Background</span>
+                    <span style="color: var(--accent-primary);">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>The rapid growth of the Internet of Medical Things (IoMT) has reshaped modern healthcare by connecting devices such as infusion pumps, ventilators, and smart hospital beds to clinical networks. While this improves operational efficiency and patient treatment, it simultaneously exposes cybersecurity risks due to outdated firmware and proprietary communication protocols.</p>
+                    <p>Conventional intrusion detection systems (IDS) and traditional SIEMs struggle against zero-day vulnerabilities in medical devices. Furthermore, existing EDR/XDR solutions lack healthcare domain-specific context. For instance, they lack automatic Protected Health Information (PHI) redaction and offline capabilities, which are crucial for compliance (HIPAA) and resilience in developing nations with unstable connectivity.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Research Gap</span>
+                    <span style="color: var(--accent-primary);">+</span>
+                </div>
+                <div class="accordion-content">
+                    <ul style="padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                        <li><strong>High False Positives:</strong> Existing anomaly-based approaches struggle with the variability of medical traffic.</li>
+                        <li><strong>Resource Constraints:</strong> Sophisticated deep-learning models often require GPU acceleration, making them impractical for CPU-only hospital gateways.</li>
+                        <li><strong>Lack of Explainability:</strong> Many black-box models generate predictions without interpretable reasoning (XAI).</li>
+                        <li><strong>No Automated Contextual Responses:</strong> Lack of automatic rollback, PHI-aware redaction, and offline operational modes for incident response.</li>
+                        <li><strong>Fragmented Alerts:</strong> Failure to intelligently group alerts or correlate them with clinical context for severity scoring.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Research Problem & Objectives</span>
+                    <span style="color: var(--accent-primary);">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p><strong>Research Problem:</strong> How to design and implement a holistic, automated response and monitoring system for IoMT devices that can accurately distinguish compromised equipment, intelligently correlate alerts, automatically contain threats via network isolation, redact PHI, and perform offline while operating efficiently on resource-constrained hospital infrastructure?</p>
+                    <h4 style="margin-top: 1.5rem;">Main Objectives:</h4>
+                    <ul style="padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                        <li>Develop a <strong>Real-Time SIEM-Based Monitoring System</strong> with alert prioritization and grouping.</li>
+                        <li>Implement a CPU-optimized <strong>AI Threat Intelligence Engine</strong> using Explainable AI (SHAP/LIME).</li>
+                        <li>Design an <strong>Adaptive Incident Correlation Engine (AICE)</strong> for severity scoring and alert fusion.</li>
+                        <li>Deploy an <strong>Automated Response System</strong> capable of device isolation, PHI redaction, and automated rollback.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Methodology</span>
+                    <span style="color: var(--accent-primary);">+</span>
+                </div>
+                <div class="accordion-content">
+                    <p>The system utilizes a comprehensive pipeline to secure the IoMT environment:</p>
+                    <ol style="padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                        <li><strong>Data Collection & Monitoring:</strong> Ingesting traffic via Suricata/Zeek and specialized agents handling MQTT, HL7, and DICOM protocols.</li>
+                        <li><strong>Threat Detection (AI Engine):</strong> Applying hybrid ensemble models (Random Forest, LightGBM, Autoencoders) optimized for CPU via quantization and pruning.</li>
+                        <li><strong>Alert Correlation (AICE):</strong> Fusing AI predictions with IDS logs, clustering related anomalies, and assigning contextual severity scores based on device criticality.</li>
+                        <li><strong>Automated Response:</strong> Triggering Python/Bash scripts to inject IPTables rules for immediate quarantine, scrubbing PHI via Regex and NLP, and enabling rollback mechanisms.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Technologies Used</span>
+                    <span style="color: var(--accent-primary);">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="grid-3" style="margin-top: 1rem;">
+                        <div>
+                            <h4 style="color: var(--accent-primary);">Monitoring & Correlation</h4>
+                            <ul style="list-style: none; color: var(--text-secondary);">
+                                <li>ELK Stack (Elasticsearch, Logstash, Kibana)</li>
+                                <li>Wazuh SIEM</li>
+                                <li>Suricata / Zeek</li>
+                                <li>Apache Kafka</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-primary);">AI & Data Science</h4>
+                            <ul style="list-style: none; color: var(--text-secondary);">
+                                <li>Python 3.10+</li>
+                                <li>TensorFlow Lite / ONNX Runtime</li>
+                                <li>Scikit-learn (RF, LightGBM, Isolation Forest)</li>
+                                <li>SHAP & LIME for Explainability</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-primary);">Infrastructure</h4>
+                            <ul style="list-style: none; color: var(--text-secondary);">
+                                <li>Linux (Ubuntu / Kali)</li>
+                                <li>IPTables (Firewall)</li>
+                                <li>Docker / Kubernetes</li>
+                                <li>Raspberry Pi (Simulators)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h2 class="logo" style="margin-bottom: 1rem;"><img src="Final Submitted Doc/LOGO.png" alt="MEDGUARD-X" style="height: 90px;" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerText='MEDGUARD-X';"></h2>
+            <p>BSc (Hons) in Information Technology Specializing in Cyber Security</p>
+            <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--border-color);">© 2025 Project 25-26J-70. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

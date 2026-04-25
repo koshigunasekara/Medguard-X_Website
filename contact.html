@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoMT Cybersecurity Framework | Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .form-group input, .form-group textarea {
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: inherit;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2);
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="Final Submitted Doc/LOGO.png" alt="MEDGUARD-X" style="height: 70px; vertical-align: middle;" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerText='MEDGUARD-X';"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="domain.html">Domain</a></li>
+                <li><a href="milestones.html">Milestones</a></li>
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="presentations.html">Presentations</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header-spacer"></div>
+
+    <header class="section" style="background: var(--bg-card); text-align: center; padding: 4rem 0;">
+        <div class="container">
+            <h1>Get In <span class="text-gradient">Touch</span></h1>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem;">Have questions about our research or interested in collaborating? Reach out to our team.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            
+            <div class="grid-2">
+                <!-- Contact Info -->
+                <div>
+                    <h2 style="color: var(--accent-primary); margin-bottom: 2rem;">Contact Information</h2>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Address</h4>
+                            <p style="margin: 0;">Sri Lanka Institute of Information Technology (SLIIT)<br>Malabe, Sri Lanka</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Phone</h4>
+                            <p style="margin: 0;">+94 11 241 3900 (SLIIT General)</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Email</h4>
+                            <p style="margin: 0;">Group Emails:<br>
+                            it22034304@my.sliit.lk<br>
+                            it22587138@my.sliit.lk<br>
+                            it22031570@my.sliit.lk<br>
+                            it22904232@my.sliit.lk</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card">
+                    <h2 style="color: var(--accent-primary); margin-bottom: 2rem;">Send a Message</h2>
+                    <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Message feature is a mockup template for the project website.');">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="Research Inquiry" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h2 class="logo" style="margin-bottom: 1rem;"><img src="Final Submitted Doc/LOGO.png" alt="MEDGUARD-X" style="height: 90px;" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerText='MEDGUARD-X';"></h2>
+            <p>BSc (Hons) in Information Technology Specializing in Cyber Security</p>
+            <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--border-color);">© 2025 Project 25-26J-70. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
