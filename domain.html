@@ -5,31 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IoMT Cybersecurity Framework | Domain</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function toggleAccordion(element) {
-            const content = element.nextElementSibling;
-            const parent = element.parentElement;
-            
-            if (parent.classList.contains('active')) {
-                parent.classList.remove('active');
-            } else {
-                // Close others
-                document.querySelectorAll('.accordion').forEach(acc => acc.classList.remove('active'));
-                parent.classList.add('active');
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .feature-block {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+        .feature-block.reverse {
+            flex-direction: row-reverse;
+        }
+        .feature-text {
+            flex: 1;
+        }
+        .feature-image {
+            flex: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+        }
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .icon-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--accent-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .feature-block, .feature-block.reverse {
+                flex-direction: column;
+                gap: 2rem;
             }
         }
-    </script>
+    </style>
 </head>
 <body>
+    <div class="scanline"></div>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="Final Submitted Doc/LOGO.png" alt="MEDGUARD-X" style="height: 70px; vertical-align: middle;" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerText='MEDGUARD-X';"></a>
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                <a href="index.html" class="logo"><img src="Final Submitted Doc/LOGO.png" alt="MEDGUARD-X" style="height: 70px; vertical-align: middle;" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerText='MEDGUARD-X';"></a>
+                <div class="cyber-status">
+                    <span class="status-dot"></span>
+                    SYSTEM ONLINE
+                </div>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="domain.html" class="active">Domain</a></li>
                 <li><a href="milestones.html">Milestones</a></li>
+                <li><a href="technologies.html">Technologies</a></li>
                 <li><a href="documents.html">Documents</a></li>
                 <li><a href="presentations.html">Presentations</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -48,106 +87,183 @@
         </div>
     </header>
 
+    <!-- Literature & Research Gap -->
     <section class="section">
         <div class="container">
-            <div class="accordion active">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <span>Literature Survey & Background</span>
-                    <span style="color: var(--accent-primary);">+</span>
+            <div class="grid-2" style="gap: 3rem;">
+                <div class="premium-member-card" style="text-align: left; padding: 3rem; align-items: flex-start;">
+                    <div class="icon-box"><i class="fa-solid fa-book-open"></i></div>
+                    <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Literature Survey</h2>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">The rapid growth of the Internet of Medical Things (IoMT) has reshaped healthcare by connecting life-critical devices. While this improves efficiency, it exposes severe cybersecurity risks due to outdated firmware and proprietary communication protocols. Conventional IDS and SIEMs struggle against zero-day medical vulnerabilities and lack healthcare-specific context like automatic PHI redaction and offline capabilities.</p>
                 </div>
-                <div class="accordion-content">
-                    <p>The rapid growth of the Internet of Medical Things (IoMT) has reshaped modern healthcare by connecting devices such as infusion pumps, ventilators, and smart hospital beds to clinical networks. While this improves operational efficiency and patient treatment, it simultaneously exposes cybersecurity risks due to outdated firmware and proprietary communication protocols.</p>
-                    <p>Conventional intrusion detection systems (IDS) and traditional SIEMs struggle against zero-day vulnerabilities in medical devices. Furthermore, existing EDR/XDR solutions lack healthcare domain-specific context. For instance, they lack automatic Protected Health Information (PHI) redaction and offline capabilities, which are crucial for compliance (HIPAA) and resilience in developing nations with unstable connectivity.</p>
-                </div>
-            </div>
-
-            <div class="accordion">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <span>Research Gap</span>
-                    <span style="color: var(--accent-primary);">+</span>
-                </div>
-                <div class="accordion-content">
-                    <ul style="padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);">
-                        <li><strong>High False Positives:</strong> Existing anomaly-based approaches struggle with the variability of medical traffic.</li>
-                        <li><strong>Resource Constraints:</strong> Sophisticated deep-learning models often require GPU acceleration, making them impractical for CPU-only hospital gateways.</li>
-                        <li><strong>Lack of Explainability:</strong> Many black-box models generate predictions without interpretable reasoning (XAI).</li>
-                        <li><strong>No Automated Contextual Responses:</strong> Lack of automatic rollback, PHI-aware redaction, and offline operational modes for incident response.</li>
-                        <li><strong>Fragmented Alerts:</strong> Failure to intelligently group alerts or correlate them with clinical context for severity scoring.</li>
+                <div class="premium-member-card" style="text-align: left; padding: 3rem; align-items: flex-start; border-color: rgba(239, 68, 68, 0.2);">
+                    <div class="icon-box" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">The Research Gap</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px;"><i class="fa-solid fa-circle-xmark" style="color: #ef4444; margin-top: 5px;"></i> <span><strong>High False Positives:</strong> Anomaly-based approaches struggle with medical traffic variability.</span></li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px;"><i class="fa-solid fa-circle-xmark" style="color: #ef4444; margin-top: 5px;"></i> <span><strong>Resource Constraints:</strong> Hospital gateways lack GPU acceleration for heavy models.</span></li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px;"><i class="fa-solid fa-circle-xmark" style="color: #ef4444; margin-top: 5px;"></i> <span><strong>Lack of Explainability:</strong> Black-box models generate predictions without reasoning.</span></li>
+                        <li style="margin-bottom: 0; display: flex; align-items: flex-start; gap: 10px;"><i class="fa-solid fa-circle-xmark" style="color: #ef4444; margin-top: 5px;"></i> <span><strong>No Automated Context:</strong> Lack of automatic rollback and PHI redaction.</span></li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="accordion">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <span>Research Problem & Objectives</span>
-                    <span style="color: var(--accent-primary);">+</span>
-                </div>
-                <div class="accordion-content">
-                    <p><strong>Research Problem:</strong> How to design and implement a holistic, automated response and monitoring system for IoMT devices that can accurately distinguish compromised equipment, intelligently correlate alerts, automatically contain threats via network isolation, redact PHI, and perform offline while operating efficiently on resource-constrained hospital infrastructure?</p>
-                    <h4 style="margin-top: 1.5rem;">Main Objectives:</h4>
-                    <ul style="padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);">
-                        <li>Develop a <strong>Real-Time SIEM-Based Monitoring System</strong> with alert prioritization and grouping.</li>
-                        <li>Implement a CPU-optimized <strong>AI Threat Intelligence Engine</strong> using Explainable AI (SHAP/LIME).</li>
-                        <li>Design an <strong>Adaptive Incident Correlation Engine (AICE)</strong> for severity scoring and alert fusion.</li>
-                        <li>Deploy an <strong>Automated Response System</strong> capable of device isolation, PHI redaction, and automated rollback.</li>
-                    </ul>
-                </div>
+    <!-- Core Problem Statement -->
+    <section class="section" style="background: var(--bg-card); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: radial-gradient(circle at center, rgba(6, 182, 212, 0.05), transparent 70%);"></div>
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;" class="animate-fade-in">
+                <span class="premium-badge">Research Challenge</span>
+                <h2 class="text-gradient" style="font-size: 2.5rem; margin-bottom: 2rem;">The Core Problem Statement</h2>
+                <p style="font-size: 1.4rem; line-height: 1.6; color: var(--text-primary); font-weight: 300; font-style: italic;">"How to design and implement a holistic, automated response and monitoring system for IoMT devices that can accurately distinguish compromised equipment, intelligently correlate alerts, automatically contain threats via network isolation, and redact PHI while operating efficiently on resource-constrained infrastructure?"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Pipeline -->
+    <section class="section" style="padding: 7rem 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <h2 class="text-gradient">The Research Methodology</h2>
+                <p>A multi-phase approach to building a resilient IoMT security framework.</p>
             </div>
 
-            <div class="accordion">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <span>Methodology</span>
-                    <span style="color: var(--accent-primary);">+</span>
-                </div>
-                <div class="accordion-content">
-                    <p>The system utilizes a comprehensive pipeline to secure the IoMT environment:</p>
-                    <ol style="padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);">
-                        <li><strong>Data Collection & Monitoring:</strong> Ingesting traffic via Suricata/Zeek and specialized agents handling MQTT, HL7, and DICOM protocols.</li>
-                        <li><strong>Threat Detection (AI Engine):</strong> Applying hybrid ensemble models (Random Forest, LightGBM, Autoencoders) optimized for CPU via quantization and pruning.</li>
-                        <li><strong>Alert Correlation (AICE):</strong> Fusing AI predictions with IDS logs, clustering related anomalies, and assigning contextual severity scores based on device criticality.</li>
-                        <li><strong>Automated Response:</strong> Triggering Python/Bash scripts to inject IPTables rules for immediate quarantine, scrubbing PHI via Regex and NLP, and enabling rollback mechanisms.</li>
-                    </ol>
-                </div>
-            </div>
-
-            <div class="accordion">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <span>Technologies Used</span>
-                    <span style="color: var(--accent-primary);">+</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="grid-3" style="margin-top: 1rem;">
+            <div class="grid-2" style="gap: 5rem; align-items: center;">
+                <div class="animate-fade-in">
+                    <!-- Step 1 -->
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 3rem;">
+                        <div style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--accent-gradient); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; box-shadow: var(--shadow-glow);">1</div>
                         <div>
-                            <h4 style="color: var(--accent-primary);">Monitoring & Correlation</h4>
-                            <ul style="list-style: none; color: var(--text-secondary);">
-                                <li>ELK Stack (Elasticsearch, Logstash, Kibana)</li>
-                                <li>Wazuh SIEM</li>
-                                <li>Suricata / Zeek</li>
-                                <li>Apache Kafka</li>
-                            </ul>
+                            <h3 style="margin-bottom: 0.5rem;">Data Ingestion & Pre-processing</h3>
+                            <p style="font-size: 0.95rem;">Capturing live MQTT, HL7, and DICOM traffic via Suricata sensors and specialized lightweight agents.</p>
                         </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 3rem;">
+                        <div style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--accent-gradient); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; box-shadow: var(--shadow-glow);">2</div>
                         <div>
-                            <h4 style="color: var(--accent-primary);">AI & Data Science</h4>
-                            <ul style="list-style: none; color: var(--text-secondary);">
-                                <li>Python 3.10+</li>
-                                <li>TensorFlow Lite / ONNX Runtime</li>
-                                <li>Scikit-learn (RF, LightGBM, Isolation Forest)</li>
-                                <li>SHAP & LIME for Explainability</li>
-                            </ul>
+                            <h3 style="margin-bottom: 0.5rem;">AI Threat Detection (ML/DL)</h3>
+                            <p style="font-size: 0.95rem;">Processing data through hybrid ensemble models optimized for edge devices using quantization and pruning.</p>
                         </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div style="display: flex; gap: 1.5rem;">
+                        <div style="flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--accent-gradient); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; box-shadow: var(--shadow-glow);">3</div>
                         <div>
-                            <h4 style="color: var(--accent-primary);">Infrastructure</h4>
-                            <ul style="list-style: none; color: var(--text-secondary);">
-                                <li>Linux (Ubuntu / Kali)</li>
-                                <li>IPTables (Firewall)</li>
-                                <li>Docker / Kubernetes</li>
-                                <li>Raspberry Pi (Simulators)</li>
-                            </ul>
+                            <h3 style="margin-bottom: 0.5rem;">AICE Correlation & Response</h3>
+                            <p style="font-size: 0.95rem;">The AICE engine clusters alerts to generate severity scores and triggers automated containment scripts.</p>
                         </div>
                     </div>
                 </div>
+                <div class="animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="premium-member-card" style="padding: 1rem; border-radius: 20px;">
+                        <img src="Sample image/Methodology.png" alt="Methodology Architecture" style="width: 100%; border-radius: 12px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Innovations Section -->
+    <section class="section" style="background: rgba(6, 182, 212, 0.03); border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <span class="premium-badge">Research Innovation</span>
+                <h2 style="font-size: 3rem;">Unique <span class="text-gradient">Offered Features</span></h2>
+                <p>The specialized technical capabilities that distinguish our 4-layer IoMT framework.</p>
             </div>
 
+            <div class="grid-3" style="gap: 2rem;">
+                <!-- Feature 1 -->
+                <div class="premium-member-card" style="padding: 2.5rem; text-align: left; align-items: flex-start;">
+                    <div class="icon-box" style="margin-bottom: 1.5rem;"><i class="fa-solid fa-microchip"></i></div>
+                    <span class="cyber-terminal" style="font-size: 0.65rem;">PROTOCOL: AICE-CORRELATION</span>
+                    <h4 style="margin: 1rem 0 0.5rem 0;">Autonomous Incident Correlation</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">An intelligent engine that fuses heterogeneous alerts from network and host layers to reduce false positives by 40%.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="premium-member-card" style="padding: 2.5rem; text-align: left; align-items: flex-start;">
+                    <div class="icon-box" style="margin-bottom: 1.5rem;"><i class="fa-solid fa-user-shield"></i></div>
+                    <span class="cyber-terminal" style="font-size: 0.65rem;">PROTOCOL: PRIVACY-MASK</span>
+                    <h4 style="margin: 1rem 0 0.5rem 0;">Dynamic PHI Redaction</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Ensuring HIPAA compliance through AI-driven masking of sensitive patient health information in real-time telemetry.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="premium-member-card" style="padding: 2.5rem; text-align: left; align-items: flex-start;">
+                    <div class="icon-box" style="margin-bottom: 1.5rem;"><i class="fa-solid fa-vault"></i></div>
+                    <span class="cyber-terminal" style="font-size: 0.65rem;">PROTOCOL: ZERO-TRUST-ISO</span>
+                    <h4 style="margin: 1rem 0 0.5rem 0;">Proactive Threat Isolation</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Autonomous containment protocol that predicts and isolates infected sensor nodes in <30s to prevent lateral movement.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="premium-member-card" style="padding: 2.5rem; text-align: left; align-items: flex-start;">
+                    <div class="icon-box" style="margin-bottom: 1.5rem;"><i class="fa-solid fa-rotate-left"></i></div>
+                    <span class="cyber-terminal" style="font-size: 0.65rem;">PROTOCOL: SELF-HEAL-V1</span>
+                    <h4 style="margin: 1rem 0 0.5rem 0;">Self-Healing Firmware Rollback</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Integrated hardware mechanism to automatically restore compromised sensor firmware to a verified "last-known-good" state.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="premium-member-card" style="padding: 2.5rem; text-align: left; align-items: flex-start;">
+                    <div class="icon-box" style="margin-bottom: 1.5rem;"><i class="fa-solid fa-brain"></i></div>
+                    <span class="cyber-terminal" style="font-size: 0.65rem;">PROTOCOL: LIGHT-CLASSIFY</span>
+                    <h4 style="margin: 1rem 0 0.5rem 0;">Resource-Optimized AI</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Specially pruned ML models designed to run on resource-constrained ESP32 nodes without compromising detection accuracy.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="premium-member-card" style="padding: 2.5rem; text-align: left; align-items: flex-start;">
+                    <div class="icon-box" style="margin-bottom: 1.5rem;"><i class="fa-solid fa-layers-group"></i></div>
+                    <span class="cyber-terminal" style="font-size: 0.65rem;">PROTOCOL: QUAD-SYNC</span>
+                    <h4 style="margin: 1rem 0 0.5rem 0;">Full-Stack Layer Synergy</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Seamless bidirectional communication between Hardware, AI, Correlation, and Response layers for unified defense.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Implementation Details -->
+    <section class="section" style="background: var(--bg-dark); padding: 7rem 0; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <h2 class="text-gradient">Hardware & Implementation</h2>
+                <p>From schematic to silicon: Validating the framework on physical medical nodes.</p>
+            </div>
+
+            <div class="grid-2" style="gap: 4rem;">
+                <div class="premium-member-card" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.5);">
+                    <h3 style="text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--accent-primary);">Full System Architecture</h3>
+                    <img src="Final Submitted Doc/System Diagram.jpg" alt="System Architecture" style="width: 100%; border-radius: 10px;">
+                </div>
+                <div class="premium-member-card" style="padding: 1.5rem; background: rgba(15, 23, 42, 0.5);">
+                    <h3 style="text-align: center; margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--accent-primary);">Node Hardware Schematic</h3>
+                    <img src="Sample image/Gemini_Generated_Image_73p4ok73p4ok73p4.png" alt="Hardware Schematic" style="width: 100%; border-radius: 10px;">
+                </div>
+            </div>
+
+            <!-- Technology Icons Grid -->
+            <div class="grid-3" style="margin-top: 5rem; gap: 2rem;">
+                <div class="premium-member-card" style="padding: 2rem; border-radius: 20px;">
+                    <i class="fa-solid fa-server" style="font-size: 2.5rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 1rem;">Monitoring Stack</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Wazuh SIEM, ELK Stack, Suricata IDS, Apache Kafka</p>
+                </div>
+                <div class="premium-member-card" style="padding: 2rem; border-radius: 20px;">
+                    <i class="fa-solid fa-microchip" style="font-size: 2.5rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 1rem;">AI Frameworks</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">TensorFlow Lite, Scikit-Learn, SHAP, Python 3.10</p>
+                </div>
+                <div class="premium-member-card" style="padding: 2rem; border-radius: 20px;">
+                    <i class="fa-solid fa-network-wired" style="font-size: 2.5rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 1rem;">Edge Infrastructure</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">ESP32 Nodes, Raspberry Pi 4 Gateways, Docker, MQTT</p>
+                </div>
+            </div>
         </div>
     </section>
 

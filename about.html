@@ -8,11 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="scanline"></div>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="Final Submitted Doc/LOGO.png" alt="MEDGUARD-X" style="height: 70px; vertical-align: middle;" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerText='MEDGUARD-X';"></a>
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                <a href="index.html" class="logo"><img src="Final Submitted Doc/LOGO.png" alt="MEDGUARD-X" style="height: 70px; vertical-align: middle;" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerText='MEDGUARD-X';"></a>
+                <div class="cyber-status">
+                    <span class="status-dot"></span>
+                    SYSTEM ONLINE
+                </div>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="domain.html">Domain</a></li>
@@ -37,95 +44,120 @@
     <section class="section">
         <div class="container">
             
-            <h2 style="text-align: center; margin-bottom: 3rem; color: var(--accent-primary);">Research Group (25-26J-70)</h2>
-            <div class="grid-2">
+            <h2 style="text-align: center; margin-bottom: 4rem;" class="text-gradient">Research Group (25-26J-70)</h2>
+            <div class="grid-2" style="gap: 3rem;">
                 
                 <!-- Firaz M M N -->
-                <div class="card profile-card">
-                    <div class="profile-img" style="overflow: hidden; padding: 0; background: transparent;">
-                        <img src="Final Submitted Doc/Firaz.png" alt="Firaz M M N" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-user-graduate\'></i>';">
+                <div class="premium-member-card">
+                    <div class="premium-img-container">
+                        <img src="Final Submitted Doc/Firaz.png" alt="Firaz M M N" class="premium-img" onerror="this.src='https://via.placeholder.com/150';">
                     </div>
-                    <h3>Firaz M M N</h3>
-                    <p style="color: var(--accent-primary); font-weight: 600;">IT22034304</p>
-                    <p style="margin-bottom: 1.5rem;">Component: AI Threat Intelligence Engine</p>
-                    <p style="font-size: 0.9rem;">Specializing in Cyber Security. Focuses on lightweight ML/DL models, CPU optimization, and Explainable AI (SHAP/LIME).</p>
-                    <div style="margin-top: 1rem;">
-                        <a href="mailto:it22034304@my.sliit.lk" style="margin-right: 1rem;"><i class="fa-solid fa-envelope"></i> Email</a>
+                    <div class="member-info">
+                        <span class="premium-badge">Group Leader</span>
+                        <h3>Firaz M M N</h3>
+                        <p style="color: var(--accent-primary); font-weight: 700; margin-bottom: 1rem;">IT22034304</p>
+                        <p style="font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">AI Threat Intelligence Engine</p>
+                        <p class="member-desc">Specializing in Cyber Security. Focuses on lightweight ML/DL models, CPU optimization, and Explainable AI (SHAP/LIME).</p>
+                    </div>
+                    <div class="premium-social-links">
+                        <a href="mailto:it22034304@my.sliit.lk" class="premium-social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#" class="premium-social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="premium-social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
 
                 <!-- Gunasekara A.G.M.K -->
-                <div class="card profile-card">
-                    <div class="profile-img" style="overflow: hidden; padding: 0; background: transparent;">
-                        <img src="Final Submitted Doc/Gunasekara.png" alt="Gunasekara A.G.M.K" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-user-graduate\'></i>';">
+                <div class="premium-member-card">
+                    <div class="premium-img-container">
+                        <img src="Final Submitted Doc/Gunasekara.png" alt="Gunasekara A.G.M.K" class="premium-img" onerror="this.src='https://via.placeholder.com/150';">
                     </div>
-                    <h3>Gunasekara A.G.M.K</h3>
-                    <p style="color: var(--accent-primary); font-weight: 600;">IT22587138</p>
-                    <p style="margin-bottom: 1.5rem;">Component: Automated Response System</p>
-                    <p style="font-size: 0.9rem;">Specializing in Cyber Security. Focuses on dynamic IPTables firewalls, contextual PHI redaction, and automated rollback scripts.</p>
-                    <div style="margin-top: 1rem;">
-                        <a href="mailto:it22587138@my.sliit.lk" style="margin-right: 1rem;"><i class="fa-solid fa-envelope"></i> Email</a>
+                    <div class="member-info">
+                        <span class="premium-badge">Group Member</span>
+                        <h3>Gunasekara A.G.M.K</h3>
+                        <p style="color: var(--accent-primary); font-weight: 700; margin-bottom: 1rem;">IT22587138</p>
+                        <p style="font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Automated Response System</p>
+                        <p class="member-desc">Specializing in Cyber Security. Focuses on dynamic IPTables firewalls, contextual PHI redaction, and automated rollback scripts.</p>
+                    </div>
+                    <div class="premium-social-links">
+                        <a href="mailto:it22587138@my.sliit.lk" class="premium-social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#" class="premium-social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="premium-social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
 
                 <!-- Basheer MS -->
-                <div class="card profile-card">
-                    <div class="profile-img" style="overflow: hidden; padding: 0; background: transparent;">
-                        <img src="Final Submitted Doc/Bhasheer.png" alt="Basheer MS" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-user-graduate\'></i>';">
+                <div class="premium-member-card">
+                    <div class="premium-img-container">
+                        <img src="Final Submitted Doc/Bhasheer.png" alt="Basheer MS" class="premium-img" onerror="this.src='https://via.placeholder.com/150';">
                     </div>
-                    <h3>Basheer MS</h3>
-                    <p style="color: var(--accent-primary); font-weight: 600;">IT22031570</p>
-                    <p style="margin-bottom: 1.5rem;">Component: Adaptive Incident Correlation Engine</p>
-                    <p style="font-size: 0.9rem;">Specializing in Cyber Security. Focuses on multi-source alert fusion, severity scoring, and decision support dashboards.</p>
-                    <div style="margin-top: 1rem;">
-                        <a href="mailto:it22031570@my.sliit.lk" style="margin-right: 1rem;"><i class="fa-solid fa-envelope"></i> Email</a>
+                    <div class="member-info">
+                        <span class="premium-badge">Group Member</span>
+                        <h3>Basheer MS</h3>
+                        <p style="color: var(--accent-primary); font-weight: 700; margin-bottom: 1rem;">IT22031570</p>
+                        <p style="font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Adaptive Incident Correlation Engine</p>
+                        <p class="member-desc">Specializing in Cyber Security. Focuses on multi-source alert fusion, severity scoring, and decision support dashboards.</p>
+                    </div>
+                    <div class="premium-social-links">
+                        <a href="mailto:it22031570@my.sliit.lk" class="premium-social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#" class="premium-social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="premium-social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
 
                 <!-- MMM Ukasha -->
-                <div class="card profile-card">
-                    <div class="profile-img" style="overflow: hidden; padding: 0; background: transparent;">
-                        <img src="Final Submitted Doc/Ukasha.png" alt="MMM Ukasha" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-user-graduate\'></i>';">
+                <div class="premium-member-card">
+                    <div class="premium-img-container">
+                        <img src="Final Submitted Doc/Ukasha.png" alt="MMM Ukasha" class="premium-img" onerror="this.src='https://via.placeholder.com/150';">
                     </div>
-                    <h3>MMM Ukasha</h3>
-                    <p style="color: var(--accent-primary); font-weight: 600;">IT22904232</p>
-                    <p style="margin-bottom: 1.5rem;">Component: Real-Time SIEM Monitoring System</p>
-                    <p style="font-size: 0.9rem;">Specializing in Cyber Security. Focuses on machine learning-based alert prioritization and intelligent alert grouping to reduce noise.</p>
-                    <div style="margin-top: 1rem;">
-                        <a href="mailto:it22904232@my.sliit.lk" style="margin-right: 1rem;"><i class="fa-solid fa-envelope"></i> Email</a>
+                    <div class="member-info">
+                        <span class="premium-badge">Group Member</span>
+                        <h3>MMM Ukasha</h3>
+                        <p style="color: var(--accent-primary); font-weight: 700; margin-bottom: 1rem;">IT22904232</p>
+                        <p style="font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Real-Time SIEM Monitoring System</p>
+                        <p class="member-desc">Specializing in Cyber Security. Focuses on ML-based alert prioritization and intelligent alert grouping to reduce noise.</p>
+                    </div>
+                    <div class="premium-social-links">
+                        <a href="mailto:it22904232@my.sliit.lk" class="premium-social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#" class="premium-social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="premium-social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
 
             </div>
 
-            <h2 style="text-align: center; margin: 4rem 0 3rem 0; color: var(--accent-primary);">Academic Supervisors</h2>
-            <div class="grid-2">
+            <h2 style="text-align: center; margin: 6rem 0 4rem 0;" class="text-gradient">Academic Supervisors</h2>
+            <div class="grid-2" style="gap: 3rem;">
                 <!-- Supervisor -->
-                <div class="card profile-card" style="border-color: var(--accent-secondary);">
-                    <div class="profile-img" style="border-color: var(--accent-secondary); overflow: hidden; padding: 0; background: transparent;">
-                        <img src="Final Submitted Doc/kanishkay-1611897608.jpg" alt="Mr. Kanishka Yapa" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-chalkboard-user\'></i>';">
+                <div class="premium-member-card">
+                    <div class="premium-img-container">
+                        <img src="Final Submitted Doc/kanishkay-1611897608.jpg" alt="Mr. Kanishka Yapa" class="premium-img" onerror="this.src='https://via.placeholder.com/150';">
                     </div>
-                    <h3>Mr. Kanishka Yapa</h3>
-                    <p style="color: var(--accent-primary); font-weight: 600;">Main Supervisor</p>
-                    <p style="font-size: 0.9rem;">Lecturer<br>Department of Computer Systems Engineering<br>Faculty of Graduate Studies</p>
-                    <div style="margin-top: 1rem;">
-                        <a href="mailto:kanishka.y@sliit.lk" style="margin-right: 1rem;"><i class="fa-solid fa-envelope"></i> kanishka.y@sliit.lk</a>
+                    <div class="member-info">
+                        <span class="premium-badge" style="background: rgba(59, 130, 246, 0.1); color: var(--accent-secondary); border-color: rgba(59, 130, 246, 0.3);">Main Supervisor</span>
+                        <h3>Mr. Kanishka Yapa</h3>
+                        <p style="font-size: 1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Lecturer</p>
+                        <p style="font-size: 0.85rem; line-height: 1.6;">Department of Computer Systems Engineering<br>Faculty of Graduate Studies</p>
                     </div>
-                    <div style="margin-top: 0.5rem;">
-                        <a href="tel:0718007138" style="color: var(--text-secondary);"><i class="fa-solid fa-phone"></i> 0718007138</a>
+                    <div class="premium-social-links">
+                        <a href="mailto:kanishka.y@sliit.lk" class="premium-social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="tel:0718007138" class="premium-social-icon" title="Phone"><i class="fa-solid fa-phone"></i></a>
                     </div>
                 </div>
 
                 <!-- Co-supervisor -->
-                <div class="card profile-card" style="border-color: var(--accent-secondary);">
-                    <div class="profile-img" style="border-color: var(--accent-secondary); overflow: hidden; padding: 0; background: transparent;">
-                        <img src="Final Submitted Doc/Screenshot 2026-04-25 132956.png" alt="Mr. Deemantha Siriwardana" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-chalkboard-user\'></i>';">
+                <div class="premium-member-card">
+                    <div class="premium-img-container">
+                        <img src="Final Submitted Doc/Deemantha.png" alt="Mr. Deemantha Siriwardana" class="premium-img" onerror="this.src='https://via.placeholder.com/150';">
                     </div>
-                    <h3>Mr. Deemantha Siriwardana</h3>
-                    <p style="color: var(--accent-primary); font-weight: 600;">Co-supervisor</p>
-                    <p style="font-size: 0.9rem;">Lecturer<br>Department of Computer Systems Engineering<br>Faculty of Computing</p>
-                    <div style="margin-top: 1rem;">
-                        <a href="mailto:deemantha.s@sliit.lk" style="margin-right: 1rem;"><i class="fa-solid fa-envelope"></i> deemantha.s@sliit.lk</a>
+                    <div class="member-info">
+                        <span class="premium-badge" style="background: rgba(59, 130, 246, 0.1); color: var(--accent-secondary); border-color: rgba(59, 130, 246, 0.3);">Co-Supervisor</span>
+                        <h3>Mr. Deemantha Siriwardana</h3>
+                        <p style="font-size: 1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Lecturer</p>
+                        <p style="font-size: 0.85rem; line-height: 1.6;">Department of Computer Systems Engineering<br>Faculty of Computing</p>
+                    </div>
+                    <div class="premium-social-links">
+                        <a href="mailto:deemantha.s@sliit.lk" class="premium-social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="tel:0771007368" class="premium-social-icon" title="Phone"><i class="fa-solid fa-phone"></i></a>
                     </div>
                 </div>
             </div>
