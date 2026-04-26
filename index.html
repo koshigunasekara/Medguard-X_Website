@@ -250,18 +250,54 @@
                 const modal = document.getElementById('welcomeModal');
                 modal.style.opacity = '1';
                 modal.style.pointerEvents = 'auto';
-                typeWriter();
+                startCyberTyping();
             }, 1000);
         };
 
-        const message = "Hi, Buddy! 👋 Welcome to the MedGuard-X Secure Portal. \n\nPlease don't do anything unauthorized... We are monitoring you. (Our AI hasn't had its coffee yet, and it's grumpy! ☕🤖)";
-        let i = 0;
-        function typeWriter() {
-            if (i < message.length) {
-                document.getElementById("typingText").innerHTML += message.charAt(i) === '\n' ? '<br>' : message.charAt(i);
-                i++;
-                setTimeout(typeWriter, 40);
+        const part1 = "Hi, Buddy! 👋 Welcome to the MedGuard-X Secure Portal. \n\nPlease don't do anything unauthorized... We are monitoring you.";
+        const part2 = "\n\n(Our AI hasn't had its coffee yet, and it's grumpy! ☕🤖)";
+        
+        function startCyberTyping() {
+            const container = document.getElementById("typingText");
+            container.innerHTML = ""; // Clear initial
+            
+            let i = 0;
+            function type1() {
+                if (i < part1.length) {
+                    if (part1.charAt(i) === '\n') {
+                        container.appendChild(document.createElement("br"));
+                    } else {
+                        container.appendChild(document.createTextNode(part1.charAt(i)));
+                    }
+                    i++;
+                    setTimeout(type1, 30);
+                } else {
+                    setTimeout(startStage2, 1200);
+                }
             }
+            type1();
+        }
+
+        function startStage2() {
+            const container = document.getElementById("typingText");
+            const punchlineSpan = document.createElement("span");
+            punchlineSpan.style.color = "var(--accent-primary)";
+            punchlineSpan.style.fontWeight = "bold";
+            container.appendChild(punchlineSpan);
+
+            let j = 0;
+            function type2() {
+                if (j < part2.length) {
+                    if (part2.charAt(j) === '\n') {
+                        punchlineSpan.appendChild(document.createElement("br"));
+                    } else {
+                        punchlineSpan.appendChild(document.createTextNode(part2.charAt(j)));
+                    }
+                    j++;
+                    setTimeout(type2, 40);
+                }
+            }
+            type2();
         }
 
         function closeModal() {
