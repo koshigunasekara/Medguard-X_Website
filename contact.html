@@ -6,50 +6,25 @@
     <title>IoMT Cybersecurity Framework | Contact Us</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialized with your Public Key
+            emailjs.init("W1gqmsvpSaJ0h-QCO");
+        })();
+    </script>
     <style>
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        .contact-method-link:hover {
+            color: var(--accent-primary) !important;
+            transform: translateX(5px);
         }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .form-group label {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .form-group input, .form-group textarea {
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            font-family: inherit;
-        }
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2);
-        }
-        .contact-info-item {
+        .contact-method-link {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(6, 182, 212, 0.1);
-            color: var(--accent-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+            gap: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
     </style>
 </head>
@@ -111,10 +86,17 @@
                         <h3 style="color: var(--accent-primary); font-size: 1.2rem; margin-bottom: 1.5rem;"><i class="fa-solid fa-user-graduate" style="margin-right: 10px;"></i> Research Group (25-26J-70)</h3>
                         
                         <div style="margin-bottom: 1.5rem;">
-                            <p style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Group Contacts</p>
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                                <a href="tel:0769755940" style="color: var(--text-secondary); font-size: 0.95rem; transition: color 0.3s;"><i class="fa-solid fa-phone" style="color: var(--accent-primary);"></i> 0769755940</a>
-                                <a href="tel:0704432332" style="color: var(--text-secondary); font-size: 0.95rem; transition: color 0.3s;"><i class="fa-solid fa-phone" style="color: var(--accent-primary);"></i> 0704432332</a>
+                            <p style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.75rem;">Group Contacts</p>
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                <a href="mailto:medguardx@gmail.com" class="contact-method-link" style="color: var(--text-secondary); font-size: 0.95rem;">
+                                    <i class="fa-solid fa-envelope" style="color: var(--accent-primary); width: 16px;"></i> medguardx@gmail.com
+                                </a>
+                                <a href="tel:0769755940" class="contact-method-link" style="color: var(--text-secondary); font-size: 0.95rem;">
+                                    <i class="fa-solid fa-phone" style="color: var(--accent-primary); width: 16px;"></i> 0769755940
+                                </a>
+                                <a href="tel:0704432332" class="contact-method-link" style="color: var(--text-secondary); font-size: 0.95rem;">
+                                    <i class="fa-solid fa-phone" style="color: var(--accent-primary); width: 16px;"></i> 0704432332
+                                </a>
                             </div>
                         </div>
 
@@ -126,36 +108,90 @@
                 </div>
 
                 <!-- Contact Form -->
-                <div class="premium-member-card" style="text-align: left; align-items: stretch; animation-delay: 0.2s;" class="animate-fade-in">
+                <div class="premium-member-card animate-fade-in" style="text-align: left; align-items: stretch; animation-delay: 0.2s;">
                     <h2 class="text-gradient" style="margin-bottom: 2rem;">Send a Message</h2>
-                    <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Message feature is a mockup template for the project website.');">
+                    <!-- EmailJS setup: 
+                         1. Sign up at emailjs.com
+                         2. Create a Service (Gmail recommended)
+                         3. Create an Email Template
+                    -->
+                    <form class="contact-form" id="contactForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="John Doe" required style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.1);">
+                            <input type="text" name="name" id="name" placeholder="John Doe" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="john@example.com" required style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.1);">
+                            <input type="email" name="email" id="email" placeholder="john@example.com" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" placeholder="Research Inquiry" required style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.1);">
+                            <input type="text" name="subject" id="subject" placeholder="Research Inquiry" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" rows="5" placeholder="Type your message here..." required style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.1);"></textarea>
+                            <textarea name="message" id="message" rows="5" placeholder="Type your message here..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 1rem;">Send Message</button>
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 1rem; font-size: 1rem;">
+                            <i class="fa-solid fa-paper-plane" style="margin-right: 10px;"></i> Send Message
+                        </button>
                     </form>
+                    
+                    <div id="formStatus" style="margin-top: 1.5rem; text-align: center; display: none;">
+                        <div class="cyber-status" style="padding: 1rem; width: 100%; justify-content: center;">
+                            <span id="statusIcon" class="status-dot"></span>
+                            <span id="statusMessage">SENDING_ENCRYPTED_PACKET...</span>
+                        </div>
+                    </div>
                 </div>
+
+                <script>
+                    const form = document.getElementById('contactForm');
+                    const statusDiv = document.getElementById('formStatus');
+                    const statusMsg = document.getElementById('statusMessage');
+                    const statusIcon = document.getElementById('statusIcon');
+                    const submitBtn = document.getElementById('submitBtn');
+
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        statusDiv.style.display = 'flex';
+                        statusMsg.innerText = 'ENCRYPTING_DATA_STREAM...';
+                        submitBtn.disabled = true;
+                        submitBtn.style.opacity = '0.5';
+
+                        // FINAL CONFIGURATION
+                        const SERVICE_ID = "service_vf8j0sr";
+                        const TEMPLATE_ID = "template_dvz3v3v";
+                        const PUBLIC_KEY = "W1gqmsvpSaJ0h-QCO";
+
+                        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this, PUBLIC_KEY)
+                            .then(function() {
+                                statusMsg.innerText = 'TRANSMISSION_SUCCESSFUL! [SECURE_CHANNEL_CLOSED]';
+                                statusIcon.style.background = '#10b981';
+                                statusIcon.style.boxShadow = '0 0 15px #10b981';
+                                form.reset();
+                                
+                                setTimeout(() => {
+                                    statusDiv.style.display = 'none';
+                                    submitBtn.disabled = false;
+                                    submitBtn.style.opacity = '1';
+                                }, 5000);
+                            }, function(error) {
+                                statusMsg.innerText = 'ERROR: TRANSMISSION_FAILED';
+                                statusIcon.style.background = '#ef4444';
+                                console.log('FAILED...', error);
+                                submitBtn.disabled = false;
+                                submitBtn.style.opacity = '1';
+                            });
+                    });
+                </script>
             </div>
 
-        </div>
-    </section>
         </div>
     </section>
 
